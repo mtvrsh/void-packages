@@ -30,7 +30,9 @@ post_extract() {
 }
 
 do_build() {
-	for util in cbfstool cbmem ectool ifdtool inteltool intelmetool nvramtool superiotool; do
+
+	for util in cbfstool cbmem ectool ifdtool inteltool intelmetool \
+		nvramtool superiotool; do
 		make ${makejobs} -C $util
 	done
 }
@@ -100,6 +102,7 @@ coreboot-utils-superiotool_package() {
 		vbin superiotool/superiotool
 		vman superiotool/superiotool.8
 	}
+
 }
 
 coreboot-utils-me_cleaner_package() {
