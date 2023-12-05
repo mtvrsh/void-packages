@@ -16,12 +16,9 @@ do_check() {
 }
 
 do_install() {
-	: ${make_cmd:=cargo auditable}
-	: ${make_install_args:=--path .}
-
-	${make_cmd} install --target ${RUST_TARGET} --root="${DESTDIR}/usr" \
-		--offline --locked ${configure_args} ${make_install_args}
-
-	rm -f "${DESTDIR}"/usr/.crates.toml
-	rm -f "${DESTDIR}"/usr/.crates2.json
+	for f in target/${RUST_TARGET}/release*/*; do
+		if [ -f "$f" ] && [ -x "$f" ]; then
+			vbin "$f"
+		fi
+	done
 }
