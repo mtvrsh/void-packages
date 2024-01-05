@@ -11,7 +11,7 @@ do_build() {
 do_check() {
 	: ${make_cmd:=cargo auditable}
 
-	${make_check_pre} ${make_cmd} test --release --locked --target ${RUST_TARGET} \
+	${make_check_pre} ${make_cmd} test --locked --target ${RUST_TARGET} \
 		${configure_args} ${make_check_args}
 }
 
