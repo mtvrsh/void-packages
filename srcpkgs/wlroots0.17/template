@@ -21,6 +21,7 @@ license="MIT"
 homepage="https://gitlab.freedesktop.org/wlroots/wlroots"
 distfiles="${homepage}/-/releases/${version}/downloads/wlroots-${version}.tar.gz"
 checksum=d3190d19d03446955e68a92c77d4c74af78384b0db39a85a0b1582adc80f36d1
+patch_args="--strip=0 --forward"
 
 post_install() {
 	vlicense LICENSE
