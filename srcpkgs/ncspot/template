@@ -1,7 +1,7 @@
 # Template file for 'ncspot'
 pkgname=ncspot
-version=1.1.0
-revision=2
+version=1.1.2
+revision=1
 build_style=cargo
 build_helper="qemu"
 hostmakedepends="pkg-config python3"
@@ -12,7 +12,7 @@ license="BSD-2-Clause"
 homepage="https://github.com/hrkfdn/ncspot"
 changelog="https://raw.githubusercontent.com/hrkfdn/ncspot/main/CHANGELOG.md"
 distfiles="https://github.com/hrkfdn/ncspot/archive/refs/tags/v${version}.tar.gz"
-checksum=d3cd828cebb3e84470f03be16925db566d4dd8289cfd3e230e64278ec9d96338
+checksum=010b12172b85e6ae0eaf60ae0ab923580bcca0b132927b39c2a2fc878cb5e6a7
 
 post_build() {
 	cargo auditable build --release --target ${RUST_TARGET} --package xtask
